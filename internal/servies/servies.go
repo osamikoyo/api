@@ -45,10 +45,11 @@ type Answer struct{
     Correct bool `json:"is_correct"`
 }
 type Object struct{
+    Glava int `json:"glava"`
     Title string `json:"title"`
     Ticket_number string `json:"ticket_number"`
     Answers []Answer `json:"answers"`
     Correct_Answer int `json:"correct_answer"`
     Answer_tip string `json:"answer_tip"`
-    Topic string `json:"topic"`
+    Name string `json:"name"`
 }
