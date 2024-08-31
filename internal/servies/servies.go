@@ -6,8 +6,8 @@ import (
 	"os"
 )
 
-func ReadJSONFile(filePath string) ([]Title, error) {
-    var persons []Title
+func ReadJSONFile(filePath string) ([]Object, error) {
+    var persons []Object
     file, err := os.Open(filePath)
     if err != nil {
         return nil, err
@@ -39,4 +39,16 @@ type Title struct{
 type Question struct{
 	Name string `json:"name"`
 	Answer string `json:"answer"`
+}
+type Answer struct{
+    Text string `json:"answer_text"`
+    Correct bool `json:"is_correct"`
+}
+type Object struct{
+    Title string `json:"title"`
+    Ticket_number string `json:"ticket_number"`
+    Answers []Answer `json:"answers"`
+    Correct_Answer int `json:"correct_answer"`
+    Answer_tip string `json:"answer_tip"`
+    Topic string `json:"topic"`
 }
